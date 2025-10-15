@@ -3,7 +3,11 @@
 #include <cstring>
 #include "Timer.h"
 
-int lcs(const std::string &a, const std::string &b){
+int lcs(const std::string &s1, const std::string &s2){
+    //Use as little memory as possible
+    const std::string &a = s1.length() > s2.length() ? s1 : s2; 
+    const std::string &b = s1.length() > s2.length() ? s2 : s1; 
+
     const int rowSize = b.length()+1;
     const int byteCount = rowSize * sizeof(int);
 
