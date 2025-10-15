@@ -5,9 +5,12 @@
 
 int lcs(const std::string &a, const std::string &b){
     const int rowSize = b.length()+1;
+    const int byteCount = rowSize * sizeof(int);
+
     int *prev = new int[rowSize], *cur = new int[rowSize], *temp; //Only need the previous and current rows
-    memset(prev, 0, rowSize * sizeof(int));
-    memset(cur, 0, rowSize * sizeof(int));
+
+    memset(prev, 0, byteCount);
+    memset(cur, 0, byteCount);
 
     for(int i = 1; i <= a.length(); ++i){
         for(int j = 1; j <= b.length(); ++j){
@@ -22,11 +25,14 @@ int lcs(const std::string &a, const std::string &b){
         temp = prev;
         prev = cur;
         cur = temp;
-        memset(cur, 0, rowSize * sizeof(int));
+        memset(cur, 0, byteCount);
     }
+
     int value = prev[rowSize-1];
+
     delete[] cur;
     delete[] prev;
+
     return value;
 }
 
@@ -37,9 +43,10 @@ int main(){
     std::cin >> a;
     std::cout << "Enter second string: ";
     std::cin >> b;
+
     Timer runtime{TimerUnits::Unit::Micro};
 
-    int lcsLen = lcs(b, a);
+    int lcsLen = lcs(a, b);
     runtime.end();
     
     std::cout << "LCS: " << lcsLen << '\n';
