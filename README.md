@@ -22,4 +22,4 @@ The LCS length will be in table[n-1][m-1] because of this.
 This is very similar to the regular DP method but uses much less space.\
 Since we only ever look at the previous row, we don't need to save any other rows.\
 This method only saves the previous and current row and discards the rest.\
-The space used is only 2 * min(n, m) comapred to the regular DP method where teh apce used is n * m
+The space used is only 2 * min(n, m) comapred to the regular DP method where the space used is n * m
