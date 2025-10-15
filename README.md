@@ -15,7 +15,7 @@ If it does then we set table[i][j] to table[i-1][j-1] + 1\
 If it doesnt then we set it to max(table[i][j-1], table[i-1][j])\
 With this method we save the previous results of whether the chars match.\
 If they match the left diagonal contains the number of char matches before.\
-If they don't match we set the cell to the max of the cell to the left and above, this cascades the LCS length so far downward.\
+If they don't match we set the cell to the max of the cell to the left and above, this cascades the LCS length downward.\
 The LCS length will be in table[n-1][m-1] because of this.
 ### Dyanmic Programming with space optimization (n * m) where n = len(a)+1, m = len(b)+1
 [Source](./lcs_space_op.cpp)\
