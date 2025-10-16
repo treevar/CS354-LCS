@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstring>
-#include "Timer.h"
+#include "Util.h"
 
 int lcs(const std::string &s1, const std::string &s2){
     //Use as little memory as possible
@@ -40,18 +40,11 @@ int lcs(const std::string &s1, const std::string &s2){
     return value;
 }
 
-std::string promptForStr(const std::string &prompt){
-    std::cout << prompt << "\n > ";
-    std::string str{};
-    std::getline(std::cin, str);
-    return str;
-}
-
 int main(){
     std::string a, b;
     std::cout << "Longest Common Subsequence Length Calculator\n";
-    a = promptForStr("Enter first string:");
-    b = promptForStr("Enter second string:");
+    a = promptForStr("Enter first string");
+    b = promptForStr("Enter second string");
 
     Timer runtime{TimerUnits::Unit::Micro};
 
