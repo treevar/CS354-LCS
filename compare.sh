@@ -1,6 +1,6 @@
 #!/bin/bash
-stringA="ABCDE"
-stringB="ACE"
+#stringA="ABCDEABCDEF"; stringB="AXYZBCDEABCF"; # Lengths 11 and 12
+stringA="abcde"; stringB="ace"; # Lengths 5 and 3
 echo "String A: $stringA"
 echo "String B: $stringB"
 echo
