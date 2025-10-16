@@ -1,6 +1,6 @@
 #!/bin/bash
-stringA="AGGTAB"
-stringB="GXTXAYB"
+stringA="ABCDE"
+stringB="ACE"
 echo "String A: $stringA"
 echo "String B: $stringB"
 echo
