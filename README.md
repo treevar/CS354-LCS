@@ -3,10 +3,10 @@
 Given string a, b find the longest common subsequence.
 ## Approaches
 ### Calculate all possible subsequences and check (2^n)
-First we remove all characters that aren't common among strings\
+[Source](./lcs_bad.cpp)\
 For every character in string a we either keep the character or drop it. \
 We do this for every char and then for every char in the resulting subsequences.\
-This results in S 2^n runtime where n = len(a)
+This results in a 2^n runtime where n = min(len(a), len(b))
 ### Dynamic Programming (n * m) where n = len(a)+1, m = len(b)+1
 [Source](./lcs.cpp)\
 For this approach we build a 2d array that is n * m and set it to 0\
