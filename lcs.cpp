@@ -3,13 +3,7 @@
 #include <cstring>
 #include "Timer.h"
 
-/* A B >
-   V0000
-    0000
-    0000
-*/
-
-int lcs(const std::string &a, const std::string &b){
+int lcs(const std::string &b, const std::string &a){
     const int TABLE_SIZE = (a.length()+1) * (b.length()+1);
     int *table = new int[TABLE_SIZE];
     memset(table, 0, TABLE_SIZE * sizeof(typeof(table[0]))); //0 array
