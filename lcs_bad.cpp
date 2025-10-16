@@ -14,9 +14,12 @@ bool containsSubsequence(const std::string &str, const std::string &seq){
     return seqIndex == seq.length(); //If we reached the end of seq, all chars were found in order
 }
 
-int checkSubSeq(const std::string &str, std::string seq){
+int checkSubSeq(const std::string &str, std::string seq, int curMax = 0){
     if(seq.empty()){
         return 0;
+    }
+    if(seq.length() <= curMax){
+        return 0; //No need to check smaller subsequences
     }
     if(containsSubsequence(str, seq)){ 
         return seq.length(); //All other subsequences will be shorter
@@ -25,7 +28,7 @@ int checkSubSeq(const std::string &str, std::string seq){
     for(int i = 0; i < seq.length(); ++i){ //Try removing each char from seq and see if it is a subsequence
         std::string subSeq = seq;
         subSeq.erase(i, 1);
-        int len = checkSubSeq(str, subSeq);
+        int len = checkSubSeq(str, subSeq, curMax);
         if(len > maxLen){
             maxLen = len;
         }
