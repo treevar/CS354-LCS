@@ -33,13 +33,19 @@ int lcs(const std::string &a, const std::string &b){
     return value;
 }
 
+std::string promptForStr(const std::string &prompt){
+    std::cout << prompt << "\n > ";
+    std::string str{};
+    std::getline(std::cin, str);
+    return str;
+}
+
 int main(){
     std::string a, b;
     std::cout << "Longest Common Subsequence Length Calculator\n";
-    std::cout << "Enter first string: ";
-    std::cin >> a;
-    std::cout << "Enter second string: ";
-    std::cin >> b;
+    a = promptForStr("Enter first string:");
+    b = promptForStr("Enter second string:");
+
     Timer runtime{TimerUnits::Unit::Micro};
 
     int lcsLen = lcs(a, b);
