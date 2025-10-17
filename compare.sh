@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ $# -gt 0 ]; then
-    stringA="ABCDEABCDEF"; stringB="AXYZBCDEABCF"; # Lengths 11 and 12
+    stringA="ABCDEABCDEF"; stringB="AFEABCDEABCF"; # Lengths 11 and 12
     badBin="./bin/lcs_bad 1" # Use seconds for timing
 else
     stringA="abcde"; stringB="ace"; # Lengths 5 and 3
