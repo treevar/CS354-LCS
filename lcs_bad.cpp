@@ -38,13 +38,13 @@ int lcs(const std::string &a, const std::string &b){
     return checkSubSeq(a.length() > b.length() ? a : b, a.length() > b.length() ? b : a);
 }
 
-int main(){
+int main(int argc, char **argv){
     std::string a, b;
     std::cout << "Longest Common Subsequence Length Calculator\n";
     a = promptForStr("Enter first string");
     b = promptForStr("Enter second string");
 
-    Timer runtime{TimerUnits::Unit::Micro};
+    Timer runtime{argc > 1 ? TimerUnits::Unit::Sec : TimerUnits::Unit::Micro};
 
     int lcsLen = lcs(a, b);
     runtime.end();
