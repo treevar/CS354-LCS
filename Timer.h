@@ -119,7 +119,7 @@ class Timer{
 
 template <typename Rep, class Clock>
 std::ostream &operator<<(std::ostream &out, const Timer<Rep, Clock> &timer){
-    out << timer._durationCount << timer._UNIT_LABEL;
+    out << timer._durationCount << ' ' << timer._UNIT_LABEL;
     return out;
 }
 
