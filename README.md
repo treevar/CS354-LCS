@@ -4,6 +4,7 @@ Given string a, b find the longest common subsequence.
 ## Approaches
 ### Calculate all possible subsequences and check (2^n)
 [Source](./lcs_bad.cpp)\
+First we remove characters that re not common among strings
 For every character in string a we either keep the character or drop it. \
 We do this for every char and then for every char in the resulting subsequences.\
 This results in a 2^n runtime where n = min(len(a), len(b))
