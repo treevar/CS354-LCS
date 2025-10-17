@@ -40,6 +40,33 @@ int lcs(const std::string &s1, const std::string &s2){
     return value;
 }
 
+//Returns a string containing chars that are not common
+std::string uncommonChars(const std::string &a, const std::string &b){
+    std::string result {};
+    for(char c : a){
+        if(b.find(c) == std::string::npos){
+            result += c;
+        }
+    }
+    for(char c : b){
+        if(a.find(c) == std::string::npos){
+            result += c;
+        }
+    }
+    return result;
+}
+
+//Remove every char in chars from str
+std::string removeChars(const std::string &str, const std::string &chars){
+    std::string result {};
+    for(char c : str){
+        if(chars.find(c) != std::string::npos){
+            result += c;
+        }
+    }
+    return result;
+}
+
 int main(){
     std::string a, b;
     std::cout << "Longest Common Subsequence Length Calculator\n";
@@ -47,6 +74,10 @@ int main(){
     b = promptForStr("Enter second string");
 
     Timer runtime{TimerUnits::Unit::Micro};
+    //Remove uncommon chars
+    const std::string uc = uncommonChars(a, b);
+    a = removeChars(a, uc);
+    b = removeChars(b, uc);
 
     int lcsLen = lcs(a, b);
     runtime.end();
